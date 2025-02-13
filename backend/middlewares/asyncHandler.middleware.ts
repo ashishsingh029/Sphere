@@ -23,7 +23,7 @@ export const asyncHandler =  (controller: AsyncControllerType): AsyncControllerT
             next
         )
     } catch (
-        error
+        error: any
         ) {
         next(
             error

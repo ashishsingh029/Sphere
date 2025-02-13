@@ -16,6 +16,6 @@ export const ErrorCodeEnum = {
 
     // System Errors
     INTERNAL_SERVER_ERROR: "INTERNAL_SERVER_ERROR",
-} as const; // making the ErrorCodeNum object immutable
+} as const // making the ErrorCodeNum object immutable
 
-export type ErrorCodeEnumType = keyof typeof ErrorCodeEnum;
+export type ErrorCodeEnumType = keyof typeof ErrorCodeEnum

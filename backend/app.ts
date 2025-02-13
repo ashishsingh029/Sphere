@@ -23,6 +23,10 @@ import {
 import {
     asyncHandler
 } from "./middlewares/asyncHandler.middleware";
+import {
+    BadRequestException
+} from "./utils/appError";
+import {ErrorCodeEnum} from "./enums/errorCodeEnum";
 
 const app: Express = express()
 const BASE_PATH: string = config.BASE_PATH
@@ -58,7 +62,13 @@ app.get(
             res: Response,
             next: NextFunction
         ): Promise<any>  => {
-            return res.status(HTTPSTATUS.OK).json({
+            // throw new BadRequestException(  // Testing Exception
+            //     "It's a bad request",
+            //     ErrorCodeEnum.RESOURCE_NOT_FOUND
+            // )
+            return res.status(
+                HTTPSTATUS.OK
+            ).json({
                 message: "StudySphere First Api"
             })
         }
