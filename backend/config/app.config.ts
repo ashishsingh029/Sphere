@@ -1,7 +1,6 @@
 import {
     getEnv
 } from "../utils/getEnv"
-
 const appConfig = () => ({
     NODE_ENV: getEnv("NODE_ENV", "development"),
     PORT: getEnv("PORT", "8000"), // getting first parameter value from .env file otherwise right side default value

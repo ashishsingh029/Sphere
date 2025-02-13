@@ -3,7 +3,6 @@ export const Roles = {
     ADMIN: "ADMIN",
     MEMBER: "MEMBER"
 } as const
-
 export const Permissions = {
     CREATE_WORKSPACE: "CREATE_WORKSPACE",
     DELETE_WORKSPACE: "DELETE_WORKSPACE",
@@ -24,6 +23,5 @@ export const Permissions = {
 
     VIEW_ONLY: "VIEW_ONLY"
 } as const
-
 export type RoleType = keyof typeof Roles
 export type PermissionType = keyof typeof Permissions

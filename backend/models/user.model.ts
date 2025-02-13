@@ -61,9 +61,7 @@ const userSchema = new Schema({
 //  before a user document is saved, the pre-middleware function checks if the password field has been modified. If it has, it hashes the password using bcrypt and then calls next() to continue with the save operation
 userSchema.pre(
     'save',
-    async function (
-        next: NextFunction
-    ): Promise<void> {
+    async function (next: NextFunction): Promise<void> {
         if (this.isModified("password")) { // To use this keyword we can't use arrow functions
             if (this.password) {
                 this.password = await hashValue(this.password)
@@ -78,7 +76,10 @@ userSchema.methods.omitPassword = function (): Omit<UserDocument, "password"> {
     return userObject
 }
 userSchema.methods.comparePassword = async function (value: string): Promise<boolean> {
-    return compareValues(value, this.password)
+    return compareValues(
+        value,
+        this.password
+    )
 }
 const UserModel: any = mongoose.model<UserDocument>("User", userSchema)
 export default UserModel

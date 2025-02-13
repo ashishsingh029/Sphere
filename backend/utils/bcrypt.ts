@@ -9,6 +9,5 @@ export const hashValue = async (
 export const compareValues = async (
     value: string,
     hashedValue: string
-): Promise<any> => {
+): Promise<any> =>
     await bcrypt.compare(value, hashedValue)
-}

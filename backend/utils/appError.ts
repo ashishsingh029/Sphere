@@ -14,9 +14,7 @@ export class AppError extends Error {
         statusCode: HttpStatusCodeType = HTTPSTATUS.INTERNAL_SERVER_ERROR,
         errorCode?: ErrorCodeEnumType
     ) {
-        super(
-            message
-        )
+        super(message)
         this.statusCode = statusCode
         this.errorCode = errorCode
         Error.captureStackTrace(

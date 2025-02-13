@@ -2,14 +2,12 @@ import {
     Request,
     Response,
     NextFunction
-} from "express";
-
+} from "express"
 type AsyncControllerType = (
     req: Request,
     res: Response,
     next: NextFunction
 ) => Promise<any>
-
 export const asyncHandler =  (controller: AsyncControllerType): AsyncControllerType =>
     async (
         req: Request,
@@ -22,11 +20,7 @@ export const asyncHandler =  (controller: AsyncControllerType): AsyncControllerT
             res,
             next
         )
-    } catch (
-        error: any
-        ) {
-        next(
-            error
-        )
+    } catch ( error: any ) {
+        next(error)
     }
 }

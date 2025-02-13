@@ -1,4 +1,1 @@
 Seeding basically refers to the action of running the seeder file(i.e. populating a database with sample or initial data)
-
-https://mongoosejs.com/docs/transactions.html
-[ Transactions in mongoose documentation ] => Basically, Transactions let you execute multiple operations in isolation and potentially undo all the operations if one of them fails. This guide will get you started using transactions with Mongoose.

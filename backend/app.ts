@@ -23,19 +23,14 @@ import {
 import {
     asyncHandler
 } from "./middlewares/asyncHandler.middleware";
-
 const app: Express = express()
 const BASE_PATH: string = config.BASE_PATH
-app.use(
-    express.json()
+app.use(express.json())
+app.use( express.urlencoded({
+        extended: true
+    })
 )
-app.use(
-    express.urlencoded({
-        extended: true }
-    )
-)
-app.use(
-    session({
+app.use( session({
         name: 'session',
         keys: [ config.SESSION_SECRET ],
         maxAge: 24*60*60*1000,
@@ -44,8 +39,7 @@ app.use(
         sameSite: 'lax'
     })
 )
-app.use(
-    cors({
+app.use( cors({
         origin: config.FRONTEND_ORIGIN,
         credentials: true
     })
@@ -62,23 +56,17 @@ app.get(
             //     "It's a bad request",
             //     ErrorCodesEnum.RESOURCE_NOT_FOUND
             // )
-            return res.status(
-                HTTPSTATUS.OK
-            ).json({
+            return res.status(HTTPSTATUS.OK).json({
                 message: "StudySphere First Api"
             })
         }
     )
 )
-app.use(
-    customErrorHandler
-)
+app.use(customErrorHandler)
 app.listen(
     config.PORT,
     async (): Promise<void> => {
         await connectMongoDb()
-        console.log(
-            `Server is Intercepting Requests on port = ${ config.PORT } in ${ config.NODE_ENV } mode`
-        )
+        console.log(`Server is Intercepting Requests on port = ${ config.PORT } in ${ config.NODE_ENV } mode`)
     }
 )
