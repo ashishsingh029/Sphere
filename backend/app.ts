@@ -76,9 +76,9 @@ app.use(
 app.listen(
     config.PORT,
     async (): Promise<void> => {
+        await connectMongoDb()
         console.log(
             `Server is Intercepting Requests on port = ${ config.PORT } in ${ config.NODE_ENV } mode`
         )
-        await connectMongoDb()
     }
 )
