@@ -1,4 +1,4 @@
-export const ErrorCodeEnum = {
+export const ErrorCodesEnum = {
     AUTH_EMAIL_ALREADY_EXISTS: "AUTH_EMAIL_ALREADY_EXISTS",
     AUTH_INVALID_TOKEN: "AUTH_INVALID_TOKEN",
     AUTH_USER_NOT_FOUND: "AUTH_USER_NOT_FOUND",
@@ -18,4 +18,4 @@ export const ErrorCodeEnum = {
     INTERNAL_SERVER_ERROR: "INTERNAL_SERVER_ERROR",
 } as const // making the ErrorCodeNum object immutable
 
-export type ErrorCodeEnumType = keyof typeof ErrorCodeEnum
+export type ErrorCodeEnumType = keyof typeof ErrorCodesEnum
