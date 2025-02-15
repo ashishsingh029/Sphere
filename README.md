@@ -6,3 +6,4 @@
 ##### [ npm run dev ] in backend folder &&
 ##### don't forget to change [ .env.sample ] file to [ .env ] and change the varibles accordingly
 #### ✅✅✅👍🤘🤙🙌👐🤝🤝
+##### [ npm run seed ] in backend folder to seed the roles initially into database
