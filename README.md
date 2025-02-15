@@ -1,3 +1,8 @@
-StudySphere is a collaborative study and productivity platform designed to help students and study groups build consistency, accountability, and effective learning habits. The platform addresses common challenges like inconsistent routines, lack of motivation, and inefficient task management. Key features include customizable study plans, real-time task tracking, a group streak system, and integrated communication tools. Users can form study groups, set daily tasks, and track their collective progress through a streak-based reward system.  
+# StudySphere
 
-Technical implementation involves a React.js frontend for intuitive UI and a Node.js backend with MongoDB for data storage and API management. Real-time updates are achieved using Socket.IO, while task completion is tracked dynamically. The streak system motivates users to complete tasks con
+##### [ npm i ] in both frontend and backend folder to install all dependencies
+
+##### [ npm run dev ] in the frontend &&
+##### [ npm run dev ] in backend folder &&
+##### don't forget to change [ .env.sample ] file to [ .env ] and change the varibles accordingly
+#### ✅✅✅👍🤘🤙🙌👐🤝🤝
