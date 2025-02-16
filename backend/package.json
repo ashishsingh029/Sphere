@@ -34,7 +34,7 @@
     "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.0",
     "@types/mongoose": "^5.11.96",
-    "@types/node": "^22.13.1",
+    "@types/node": "^22.13.2",
     "@types/passport": "^1.0.17",
     "@types/passport-google-oauth20": "^2.0.16",
     "@types/passport-local": "^1.0.38",
