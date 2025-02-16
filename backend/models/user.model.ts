@@ -59,17 +59,17 @@ const userSchema = new Schema({
     timestamps: true
 })
 //  before a user document is saved, the pre-middleware function checks if the password field has been modified. If it has, it hashes the password using bcrypt and then calls next() to continue with the save operation
-userSchema.pre(
-    'save',
-    async function (next: NextFunction): Promise<void> {
-        if (this.isModified("password")) { // To use this keyword we can't use arrow functions
-            if (this.password) {
-                this.password = await hashValue(this.password)
-            }
-        }
-        next()
-    }
-)
+// userSchema.pre(
+//     "save",
+//     async function (next: NextFunction): Promise<void> {
+//         if (this.isModified("password")) { // To use this keyword we can't use arrow functions
+//             if (this.password) {
+//                 this.password = await hashValue(this.password)
+//             }
+//         }
+//         next()
+//     }
+// )
 userSchema.methods.omitPassword = function (): Omit<UserDocument, "password"> {
     const userObject = this.toObject()
     delete userObject.password

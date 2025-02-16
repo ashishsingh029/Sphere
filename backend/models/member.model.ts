@@ -4,7 +4,7 @@ import mongoose, {
 } from 'mongoose'
 import {
     RoleDocument
-} from "./rolesPermissions."
+} from "./rolesPermissions"
 export interface MemberDocument extends Document {
     userId: mongoose.Types.ObjectId,
     workspaceId: mongoose.Types.ObjectId,

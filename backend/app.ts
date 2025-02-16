@@ -23,10 +23,11 @@ import {
 import {
     asyncHandler
 } from "./middlewares/asyncHandler.middleware";
+import authRoute from "./routes/auth.route";
 const app: Express = express()
 const BASE_PATH: string = config.BASE_PATH
 app.use(express.json())
-app.use( express.urlencoded({
+app.use(express.urlencoded({
         extended: true
     })
 )
@@ -39,7 +40,7 @@ app.use( session({
         sameSite: 'lax'
     })
 )
-app.use( cors({
+app.use(cors({
         origin: config.FRONTEND_ORIGIN,
         credentials: true
     })
@@ -62,6 +63,8 @@ app.get(
         }
     )
 )
+// console.log("Base Path = " + BASE_PATH)
+app.use(`${BASE_PATH}/auth`, authRoute)
 app.use(customErrorHandler)
 app.listen(
     config.PORT,

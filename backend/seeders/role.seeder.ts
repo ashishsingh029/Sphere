@@ -1,6 +1,6 @@
 import 'dotenv/config'
 import connectMongoDb from '../config/mongo.config'
-import RoleModel from '../models/rolesPermissions.'
+import RoleModel from '../models/rolesPermissions'
 import {
     RolePermissions
 } from '../utils/rolesPermissions'
